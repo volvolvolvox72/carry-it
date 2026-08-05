@@ -5,6 +5,7 @@ body {
     background-size: 7dvh;
     backdrop-filter: blur(2px) brightness(80%);
     overflow: hidden;
+    touch-action: manipulation;
 }
 .container{
     display: flex;
