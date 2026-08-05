@@ -2,11 +2,12 @@
 body {
     margin: 0;
     background-image: url(imgWall.png);
-    background-size: 7vh;
+    background-size: 7dvh;
     backdrop-filter: blur(2px) brightness(80%);
+    overflow: hidden;
 }
 .container{
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100dvh;
 }
