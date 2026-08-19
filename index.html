@@ -3,7 +3,7 @@
 <!-- 2, htmlにcanvasタグ、6, 345, 1 -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <title>Carry It</title>
     <script>
@@ -110,6 +110,12 @@
 <body>
     <div class="container">
         <canvas id="soko" width="440" height="800"></canvas>
+        <div class="btnWrapper">
+            <button class="btn up" id="up">↑</button>
+            <button class="btn right" id="right">→</button>
+            <button class="btn left" id="left">←</button>
+            <button class="btn down" id="down">↓</button>
+        </div>
     </div>
 
     <img id="imgWall" src="imgWall.png" style="display: none;">

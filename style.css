@@ -1,6 +1,8 @@
 @charset "utf-8";
-html{
-    touch-action: manipulation;
+html,
+body,
+canvas {
+    touch-action: none;
     overflow: hidden;
 }
 body {
@@ -8,10 +10,37 @@ body {
     background-image: url(imgWall.png);
     background-size: 7dvh;
     backdrop-filter: blur(2px) brightness(80%);
-
 }
 .container{
     display: flex;
+    position: relative;
     justify-content: center;
     height: 100dvh;
+
+}
+.btnWrapper {
+    position: absolute;
+    aspect-ratio: 440 / 800;
+    height: 100dvh;
+}
+.btn {
+    position: absolute;
+    width: 9.09%;
+    height: 5%;
+}
+.up {
+    left: 63.63%;
+    top: 65%;
+}
+.right {
+    left: 72.72%;
+    top: 70%;
+}
+.left {
+    left: 54.54%;
+    top: 70%;
+}
+.down {
+    left: 63.63%;
+    top: 70%;
 }
