@@ -35,11 +35,54 @@
         let gc = null;
         let px = 2;
         let py = 12;
+        let isClear = false;
 
         window.onload = () => {
             gc = document.getElementById("soko").getContext("2d");
             window.onkeydown = mykeydown;
             repaint();
+
+            const left = document.getElementById("left");
+            const up = document.getElementById("up");
+            const right = document.getElementById("right");
+            const down = document.getElementById("down");
+
+            left.addEventListener("pointerdown", () => {
+                const keyEvent = new KeyboardEvent("keydown", {
+                    key: "ArrowLeft",
+                    code: "ArrowLeft",
+                    keyCode: 37,
+                    bubbles: true
+                });
+                window.dispatchEvent(keyEvent);
+            });
+            up.addEventListener("pointerdown", () => {
+                const keyEvent = new KeyboardEvent("keydown", {
+                    key: "ArrowUp",
+                    code: "ArrowUp",
+                    keyCode: 38,
+                    bubbles: true
+                });
+                window.dispatchEvent(keyEvent);
+            });
+            right.addEventListener("pointerdown", () => {
+                const keyEvent = new KeyboardEvent("keydown", {
+                    key: "ArrowRight",
+                    code: "ArrowRight",
+                    keyCode: 39,
+                    bubbles: true
+                });
+                window.dispatchEvent(keyEvent);
+            });
+            down.addEventListener("pointerdown", () => {
+                const keyEvent = new KeyboardEvent("keydown", {
+                    key: "ArrowDown",
+                    code: "ArrowDown",
+                    keyCode: 40,
+                    bubbles: true
+                });
+                window.dispatchEvent(keyEvent);
+            });
         };
 
         function mykeydown(e){
@@ -111,9 +154,9 @@
     <div class="container">
         <canvas id="soko" width="440" height="800"></canvas>
         <div class="btnWrapper">
+            <button class="btn left" id="left">←</button>
             <button class="btn up" id="up">↑</button>
             <button class="btn right" id="right">→</button>
-            <button class="btn left" id="left">←</button>
             <button class="btn down" id="down">↓</button>
         </div>
     </div>
