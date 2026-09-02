@@ -29,6 +29,7 @@ body {
     height: 7.5%;
     text-align: center;
     user-select: none;
+    -webkit-user-select: none;
 }
 .up {
     left: 68.18%;
