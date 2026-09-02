@@ -27,20 +27,25 @@ body {
     position: absolute;
     width: 9.09%;
     height: 5%;
+    text-align: center;
 }
 .up {
-    left: 63.63%;
+    left: 68.18%;
     top: 65%;
 }
 .right {
-    left: 72.72%;
-    top: 70%;
+    left: 81.81%;
+    top: 72%;
 }
 .left {
     left: 54.54%;
-    top: 70%;
+    top: 72%;
 }
 .down {
-    left: 63.63%;
-    top: 70%;
+    left: 68.18%;
+    top: 72%;
+}
+
+.none {
+    display: none;
 }

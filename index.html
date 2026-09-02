@@ -86,6 +86,9 @@
         };
 
         function mykeydown(e){
+            if(isClear){
+                return;
+            }
             let dx0 = px;
             let dy0 = py;
             let dx1 = px;
@@ -122,7 +125,21 @@
                 }
             }
 
-            repaint();
+            isClear = checkClear();
+
+            isClear ? drawClearScreen() : repaint();
+        }
+
+        function checkClear () {
+            let isClear;
+            for(let y=0; y<data.length; y++){
+                for(let x=0; x<data[y].length; x++){
+                    if(data[y][x] == 2 || data[y][x] == 1){
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         function repaint(){
@@ -146,14 +163,27 @@
 
             gc.font = "24px 'sans-serif'";
             gc.fillText("荷物を押して運ぼう", 216, 480);
+        }
 
+        function drawClearScreen(){
+            gc.clearRect(0, 0, 440, 800);
+            for(let y=0; y<data.length; y++){
+                for(let x=0; x<data[y].length; x++){
+                    gc.drawImage(imgWall, x*40, y*40, 40, 40);
+                }
+            }
+
+            gc.font = "48px 'sans-serif'";
+            gc.fillText("Good job!", 110, 320);
+
+            document.getElementById("btnWrapper").classList.add("none");
         }
     </script>
 </head>
 <body>
     <div class="container">
         <canvas id="soko" width="440" height="800"></canvas>
-        <div class="btnWrapper">
+        <div class="btnWrapper" id="btnWrapper">
             <button class="btn left" id="left">←</button>
             <button class="btn up" id="up">↑</button>
             <button class="btn right" id="right">→</button>
